@@ -3,9 +3,9 @@
     <div>
       <select v-model="cityValue">
         <option value disabled>--Choisissez une ville--</option>
-        <option value="nice">Nice</option>
-        <option value="paris">Paris</option>
-        <option value="lyon">Lyon</option>
+        <option value="Nice">Nice</option>
+        <option value="Paris">Paris</option>
+        <option value="Lyon">Lyon</option>
       </select>
     </div>
     <pre>{{ errorMessage }}</pre>
