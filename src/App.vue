@@ -5,6 +5,7 @@
         <option value="">--Choisissez une ville--</option>
         <option value="nice">Nice</option>
         <option value="paris">Paris</option>
+        <option value="lyon">Lyon</option>
       </select>
     </div>
     <div>
