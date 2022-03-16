@@ -2,7 +2,7 @@
   <form @submit="submit">
     <div>
       <select v-model="cityValue">
-        <option disabled selected value>--Choisissez une ville--</option>
+        <option value disabled>--Choisissez une ville--</option>
         <option value="nice">Nice</option>
         <option value="paris">Paris</option>
         <option value="lyon">Lyon</option>
@@ -36,6 +36,7 @@ const { value: cityValue, errorMessage } = useField(
   'address.city',
   toFieldValidator(z.string({ required_error: 'Veuillez choisir une ville' }), {
     validateOnValueUpdate: false,
+    initialValue: '',
   })
 );
 const { value: zipValue } = useField('address.zip.code');
