@@ -1,5 +1,5 @@
 <template>
-  <form @submit="handleSubmit">
+  <form @submit="submit">
     <div>
       <select v-model="cityValue">
         <option value="">--Choisissez une ville--</option>
@@ -8,6 +8,7 @@
         <option value="lyon">Lyon</option>
       </select>
     </div>
+    <pre>{{ errorMessage }}</pre>
     <div>
       <input v-model="zipValue" type="number" />
     </div>
@@ -29,16 +30,18 @@ import { toFieldValidator } from '@vee-validate/zod';
 
 const { handleSubmit, values } = useForm();
 
+const submit = handleSubmit(() => {});
+
 const { value: cityValue, errorMessage } = useField(
   'address.city',
   toFieldValidator(z.string({ required_error: 'Veuillez choisir une ville' }), {
     validateOnValueUpdate: false,
   })
 );
-const { value: zipValue } = useField('address.city.code');
+const { value: zipValue } = useField('address.zip.code');
 
 const { value: minValue } = useField('minMax[0]');
-const { value: maxValue } = useField('minMax[0]');
+const { value: maxValue } = useField('minMax[1]');
 </script>
 
 <style scoped lang="scss"></style>
