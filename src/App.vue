@@ -8,6 +8,9 @@
       </select>
     </div>
     <div>
+      <input v-model="zipValue" type="number" />
+    </div>
+    <div>
       <input v-model="minValue" type="number" />
     </div>
     <div>
@@ -27,7 +30,9 @@ const { handleSubmit, values } = useForm();
 
 const { value: cityValue, errorMessage } = useField(
   'address.city',
-  toFieldValidator(z.string({ required_error: 'Veuillez choisir une ville' }))
+  toFieldValidator(z.string({ required_error: 'Veuillez choisir une ville' }), {
+    validateOnValueUpdate: false,
+  })
 );
 const { value: zipValue } = useField('address.city.code');
 
