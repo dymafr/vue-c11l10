@@ -2,7 +2,7 @@
   <form @submit="submit">
     <div>
       <select v-model="cityValue">
-        <option value="">--Choisissez une ville--</option>
+        <option disabled selected value>--Choisissez une ville--</option>
         <option value="nice">Nice</option>
         <option value="paris">Paris</option>
         <option value="lyon">Lyon</option>
